@@ -160,8 +160,8 @@ button {
 }
 
 .hero {
-   height: calc(100vh - 10px);
-   min-height: 620px;
+   height: calc(100vh - 30px);
+   min-height: 0;
    position: relative;
    overflow: hidden
 }
