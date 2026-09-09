@@ -1,5 +1,8 @@
-/* /* ========================================================= */
-R.P. BAKERS & FAST FOOD — MAIN STYLESHEET IMAGE RULE: Every <img>has its own URL. Change only src.=========================================================*/:root {
+/* =========================================================
+   R.P. BAKERS & FAST FOOD — MAIN STYLESHEET
+   IMAGE RULE: Every <img> has its own URL. Change only src.
+   ========================================================= */
+:root {
    --bg: #090909;
    --panel: #111;
    --panel2: #171717;
@@ -2415,4 +2418,733 @@ em,
    .hero-content h2 {
       animation: none;
    }
+}
+
+/* =========================================================
+   FINAL RESPONSIVE SAFETY LAYER
+   Mobile + Tablet polish without changing desktop structure.
+   ========================================================= */
+
+/* ---------- Large tablets / small laptops ---------- */
+@media (min-width: 769px) and (max-width: 1049px) {
+  .container {
+    width: min(100% - 44px, 960px);
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  .hero-content {
+    padding-top: 100px;
+    padding-bottom: 95px;
+  }
+
+  .hero-content h1,
+  .hero-content h2 {
+    font-size: clamp(3.2rem, 8vw, 5.2rem);
+  }
+
+  .specials-grid {
+    grid-template-columns: 1.15fr .925fr .925fr;
+  }
+
+  .special-card,
+  .special-card-large {
+    min-height: 340px;
+  }
+
+  .story-grid,
+  .why-grid {
+    gap: 36px;
+  }
+
+  .story-visual,
+  .story-visual > img,
+  .why-visual img {
+    min-height: 390px;
+    height: 390px;
+  }
+}
+
+/* ---------- Proper mobile layout ---------- */
+@media (max-width: 768px) {
+  :root {
+    --mobile-gutter: 16px;
+    --mobile-section: 56px;
+  }
+
+  body {
+    width: 100%;
+    min-width: 0;
+    overflow-x: hidden;
+  }
+
+  .container {
+    width: calc(100% - (var(--mobile-gutter) * 2));
+    max-width: none;
+  }
+
+  .section {
+    padding: var(--mobile-section) 0;
+  }
+
+  /* Header */
+  .site-header {
+    min-height: 64px;
+  }
+
+  .nav-wrap {
+    min-height: 64px;
+    gap: 8px;
+  }
+
+  .brand {
+    min-width: 0;
+    max-width: calc(100% - 58px);
+  }
+
+  .brand-logo {
+    width: 42px;
+    height: 42px;
+    flex-basis: 42px;
+    border-radius: 11px;
+  }
+
+  .brand-text {
+    min-width: 0;
+  }
+
+  .brand-text strong {
+    font-size: .86rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .brand-text span {
+    font-size: .46rem;
+    letter-spacing: .09em;
+    white-space: nowrap;
+  }
+
+  .mobile-menu-btn {
+    width: 42px;
+    height: 42px;
+    flex: 0 0 42px;
+  }
+
+  /* Hero: designed for phone proportions, not squeezed desktop */
+  .hero,
+  .hero-slider {
+    min-height: min(760px, calc(100svh - 64px));
+  }
+
+  .hero-slide-link,
+  .hero-content {
+    min-height: min(760px, calc(100svh - 64px));
+  }
+
+  .hero-image img {
+    object-position: 58% center;
+  }
+
+  .hero-overlay {
+    background:
+      linear-gradient(180deg, rgba(0,0,0,.12) 0%, rgba(0,0,0,.34) 38%, rgba(0,0,0,.94) 100%),
+      linear-gradient(90deg, rgba(0,0,0,.72) 0%, rgba(0,0,0,.26) 100%);
+  }
+
+  .hero-content {
+    justify-content: flex-end;
+    padding-top: 90px;
+    padding-bottom: 94px;
+  }
+
+  .hero-content h1,
+  .hero-content h2 {
+    width: 100%;
+    max-width: 100%;
+    font-size: clamp(2.55rem, 13vw, 4rem);
+    line-height: .94;
+    margin-top: 10px;
+    margin-bottom: 12px;
+  }
+
+  .hero-content p {
+    max-width: 95%;
+    font-size: .82rem;
+    line-height: 1.55;
+  }
+
+  .hero-meta {
+    margin-top: 17px;
+    gap: 7px;
+  }
+
+  .hero-tag {
+    padding: 9px 13px;
+    font-size: .66rem;
+  }
+
+  .slider-prev,
+  .slider-next {
+    bottom: 18px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .slider-prev { right: 92px; }
+  .slider-next { right: 48px; }
+
+  .slider-dots {
+    right: 13px;
+    bottom: 33px;
+  }
+
+  /* Headings */
+  .section-heading {
+    margin-bottom: 24px;
+  }
+
+  .split-heading {
+    display: block;
+  }
+
+  .split-heading .text-link {
+    display: inline-block;
+    margin-top: 10px;
+  }
+
+  h1 {
+    font-size: clamp(2.45rem, 12vw, 4rem);
+  }
+
+  h2 {
+    font-size: clamp(2rem, 10vw, 3.15rem);
+  }
+
+  h3 {
+    font-size: 1.3rem;
+  }
+
+  .eyebrow {
+    font-size: .58rem;
+    letter-spacing: .15em;
+  }
+
+  /* Story / Why */
+  .story-grid,
+  .why-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .story-copy > p,
+  .why-copy > p {
+    max-width: 100%;
+    font-size: .82rem;
+  }
+
+  .story-points {
+    gap: 12px;
+    margin: 22px 0;
+  }
+
+  .story-actions {
+    width: 100%;
+  }
+
+  .story-actions .btn {
+    flex: 1 1 150px;
+  }
+
+  .story-visual {
+    min-height: 0;
+    margin: 4px 6px 0;
+  }
+
+  .story-visual > img {
+    height: 330px;
+    min-height: 0;
+    border-radius: 20px;
+  }
+
+  .story-visual::before {
+    inset: -7px 8px 8px -7px;
+    border-radius: 20px;
+  }
+
+  .floating-card {
+    padding: 9px 11px;
+    border-radius: 11px;
+  }
+
+  .floating-card-one {
+    left: -5px;
+    bottom: 15px;
+  }
+
+  .floating-card-two {
+    top: 14px;
+    right: -5px;
+  }
+
+  .why-visual {
+    order: 1;
+  }
+
+  .why-copy {
+    order: 2;
+  }
+
+  .why-visual img {
+    height: 300px;
+    min-height: 0;
+  }
+
+  .benefit-list {
+    gap: 6px;
+    margin: 19px 0;
+  }
+
+  .benefit {
+    grid-template-columns: 30px 1fr;
+    gap: 9px;
+    padding: 11px 0;
+  }
+
+  /* Specials: compact cards instead of oversized desktop cards */
+  .specials-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .special-card,
+  .special-card-large {
+    min-height: 250px;
+  }
+
+  .special-card-large {
+    min-height: 290px;
+  }
+
+  .special-info {
+    left: 15px;
+    right: 15px;
+    bottom: 15px;
+  }
+
+  .special-info h3 {
+    margin: 5px 0 4px;
+    font-size: 1.3rem;
+  }
+
+  .special-info p {
+    margin-bottom: 8px;
+    font-size: .67rem;
+  }
+
+  /* Visual CTA */
+  .visual-cta {
+    padding-top: 8px;
+  }
+
+  .visual-cta-box {
+    min-height: 320px;
+    border-radius: 20px;
+  }
+
+  .visual-cta-image::after {
+    background: linear-gradient(180deg, rgba(0,0,0,.20), rgba(0,0,0,.93));
+  }
+
+  .visual-cta-copy {
+    width: 100%;
+    padding: 30px 20px;
+  }
+
+  /* Reviews */
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .review-card {
+    padding: 18px;
+  }
+
+  .review-card p {
+    min-height: auto;
+    font-size: .75rem;
+  }
+
+  /* Order CTA */
+  .order-cta {
+    padding-top: 20px;
+    padding-bottom: 58px;
+  }
+
+  .order-cta-box {
+    gap: 18px;
+    padding: 24px 18px;
+    border-radius: 19px;
+  }
+
+  .order-cta-box h2 {
+    font-size: 1.9rem;
+  }
+
+  .order-cta-box .btn {
+    width: 100%;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 42px 0 18px;
+    margin-top: 20px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 16px;
+  }
+
+  .footer-brand {
+    grid-column: 1 / -1;
+  }
+
+  .footer-brand p {
+    max-width: 100%;
+  }
+
+  /* Touch targets */
+  .btn,
+  .tab,
+  .add,
+  .text-link,
+  .mobile-menu-btn,
+  .slider-prev,
+  .slider-next {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn {
+    min-height: 46px;
+  }
+}
+
+/* ---------- Menu / Cakes / Order / About / Gallery / Contact mobile pages ---------- */
+@media (max-width: 768px) {
+  .page-head {
+    padding: 44px 0 28px;
+  }
+
+  .page-head h1 {
+    font-size: clamp(2.45rem, 12vw, 3.7rem);
+    line-height: .94;
+    margin-bottom: 10px;
+  }
+
+  .page-head p {
+    max-width: 100%;
+    font-size: .78rem;
+  }
+
+  .tabs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 7px;
+    margin: 0 0 22px;
+    padding: 2px 1px 7px;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+
+  .tabs::-webkit-scrollbar {
+    display: none;
+  }
+
+  .tab {
+    flex: 0 0 auto;
+    padding: 9px 13px;
+    font-size: .65rem;
+    white-space: nowrap;
+  }
+
+  .products {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .product {
+    border-radius: 17px;
+  }
+
+  .product-img {
+    height: 205px;
+  }
+
+  .product-body {
+    padding: 15px;
+  }
+
+  .product-body h3 {
+    font-size: 1.3rem;
+  }
+
+  .product-body p {
+    min-height: 0;
+    margin: 6px 0 12px;
+    font-size: .72rem;
+  }
+
+  .product-body > div {
+    padding-top: 11px;
+  }
+
+  .add {
+    min-height: 38px;
+    padding: 7px 13px;
+  }
+
+  .cakes {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .cake {
+    border-radius: 17px;
+  }
+
+  .cake img {
+    height: 270px;
+  }
+
+  .cake > div {
+    padding: 18px;
+  }
+
+  .cake h2 {
+    font-size: 1.55rem;
+  }
+
+  .cake p {
+    font-size: .75rem;
+    margin-bottom: 14px;
+  }
+
+  .custom {
+    margin-top: 16px;
+    padding: 20px 17px;
+    border-radius: 17px;
+    gap: 14px;
+  }
+
+  .custom h2 {
+    font-size: 1.55rem;
+  }
+
+  .custom p {
+    font-size: .75rem;
+  }
+
+  .order-grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .card {
+    padding: 18px;
+    border-radius: 17px;
+  }
+
+  .cart-row {
+    gap: 10px;
+    padding: 13px 0;
+  }
+
+  .qty button {
+    width: 32px;
+    height: 32px;
+  }
+
+  .form input,
+  .form textarea {
+    font-size: 16px;
+    padding: 12px;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .about > img {
+    height: 330px;
+    border-radius: 19px;
+  }
+
+  .about h2 {
+    font-size: clamp(2rem, 10vw, 3rem);
+  }
+
+  .about p {
+    font-size: .78rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 145px;
+    gap: 8px;
+  }
+
+  .gallery-item {
+    border-radius: 10px;
+  }
+
+  .gallery-item:nth-child(1),
+  .gallery-item:nth-child(8) {
+    grid-column: span 2;
+  }
+
+  .contact {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .contact h2 {
+    font-size: clamp(2.2rem, 11vw, 3.2rem);
+    margin-bottom: 15px;
+  }
+
+  .contact > a,
+  .contact p {
+    padding: 13px 0;
+    font-size: .78rem;
+  }
+
+  .map {
+    min-height: 280px;
+    border-radius: 18px;
+  }
+
+  .map b {
+    width: 64px;
+    height: 64px;
+    font-size: 23px;
+  }
+
+  .map h2 {
+    font-size: 1.55rem;
+    margin-top: 14px;
+  }
+
+  .float-wa {
+    right: 14px;
+    bottom: 14px;
+    width: 50px;
+    height: 50px;
+    font-size: 20px;
+  }
+
+  .lightbox {
+    padding: 16px;
+  }
+
+  .lightbox img {
+    max-width: 100%;
+    max-height: 82%;
+  }
+
+  .lightbox button {
+    top: 12px;
+    right: 12px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* ---------- Very small phones ---------- */
+@media (max-width: 390px) {
+  .container {
+    width: calc(100% - 24px);
+  }
+
+  .brand-text strong {
+    font-size: .8rem;
+  }
+
+  .brand-text span {
+    font-size: .42rem;
+  }
+
+  .hero,
+  .hero-slider,
+  .hero-slide-link,
+  .hero-content {
+    min-height: calc(100svh - 64px);
+  }
+
+  .hero-content {
+    padding-bottom: 86px;
+  }
+
+  .hero-content h1,
+  .hero-content h2 {
+    font-size: 2.45rem;
+  }
+
+  .hero-content p {
+    max-width: 100%;
+    font-size: .76rem;
+  }
+
+  .special-card,
+  .special-card-large {
+    min-height: 235px;
+  }
+
+  .product-img {
+    height: 190px;
+  }
+
+  .cake img {
+    height: 240px;
+  }
+
+  .gallery {
+    grid-auto-rows: 125px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---------- Prevent mobile overflow from long content ---------- */
+@media (max-width: 768px) {
+  .brand-text,
+  .product-body,
+  .card,
+  .contact,
+  .about,
+  .story-copy,
+  .why-copy,
+  .footer-brand,
+  .footer-links {
+    min-width: 0;
+  }
+
+  p,
+  a,
+  h1,
+  h2,
+  h3,
+  h4,
+  strong,
+  span {
+    overflow-wrap: anywhere;
+  }
 }
