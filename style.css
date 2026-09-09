@@ -169,7 +169,7 @@ button {
 /* Mobile */
 @media (max-width: 768px) {
    .hero {
-      height: calc(100vh - 30px);
+      height: 860px;
       min-height: auto;
       position: relative;
       overflow: hidden;
