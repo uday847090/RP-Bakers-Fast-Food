@@ -160,10 +160,20 @@ button {
 }
 
 .hero {
-   height: calc(100vh - 30px);
-   min-height: 0;
-   position: relative;
-   overflow: hidden
+    height: calc(100vh - 10px);
+    min-height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+    .hero {
+        height: calc(100vh - 30px);
+        min-height: auto;
+        position: relative;
+        overflow: hidden;
+    }
 }
 
 .slides,
